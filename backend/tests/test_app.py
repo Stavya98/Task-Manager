@@ -9,11 +9,18 @@ import pytest
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
+
+    # 🔥 IMPORTANT FIX
+    from models import init_db
+    init_db()
+
     return app.test_client()
+
 
 def test_home(client):
     response = client.get("/")
     assert response.status_code == 200
+
 
 def test_add_task(client):
     response = client.post("/tasks", json={
@@ -21,6 +28,7 @@ def test_add_task(client):
         "priority": "High"
     })
     assert response.status_code == 200
+
 
 def test_get_tasks(client):
     response = client.get("/tasks")
