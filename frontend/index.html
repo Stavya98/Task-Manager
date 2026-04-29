@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>✨ Task Manager</h1>
+
+    <div class="input-box">
+      <input id="taskInput" placeholder="Enter task..." />
+      <select id="priority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+      <button onclick="addTask()">Add</button>
+    </div>
+    <button onclick="startListening()" class="mic-btn">🎤 Speak</button>
+<p id="voiceOutput"></p>
+    <div class="filters">
+  <button onclick="setFilter('all')">All</button>
+  <button onclick="setFilter('pending')">Pending</button>
+  <button onclick="setFilter('completed')">Completed</button>
+</div>
+    <div id="taskList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+body {
+  font-family: Arial;
+  background: #f5f7fb;
+  margin: 0;
+}
+
+.container {
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+.task {
+  background: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  animation: fadeIn 0.4s ease;
+}
+
+.low { border-left: 5px solid green; }
+.medium { border-left: 5px solid orange; }
+.high { border-left: 5px solid red; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.filters {
+  margin-bottom: 15px;
+}
+
+.filters button {
+  margin: 5px;
+  background: #0ed0d6;
+}
+
+.filters button:hover {
+  background: #0cacb2;
+}
+
+.mic-btn {
+  background: #007bff;
+  margin-bottom: 10px;
+}
+
+.mic-btn:hover {
+  background: #0056b3;
+}
