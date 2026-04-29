@@ -7,6 +7,10 @@ CORS(app)
 
 init_db()
 
+@app.route("/")
+def home():
+    return jsonify({"message": "API running"})
+
 # ➕ Create Task
 @app.route("/tasks", methods=["POST"])
 def add_task():
