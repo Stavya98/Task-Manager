@@ -1,13 +1,11 @@
-name: Flask CI Pipeline
+name: Flask CI/CD Pipeline
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,3 +25,9 @@ jobs:
       run: |
         cd backend
         python -m pytest
+
+    # 💀 THIS IS REAL CD
+    - name: 🚀 Deploy to Render (ONLY if tests pass)
+      if: success()
+      run: |
+        curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
